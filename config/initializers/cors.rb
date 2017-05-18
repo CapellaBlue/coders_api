@@ -17,8 +17,12 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins 'localhost:3000'
     resource '/posts',
-    headers: 'x-domain-token',
-    methods: [:get, :post, :update, :destroy]
+      headers: 'x-domain-token',
+      methods: [:get, :post, :update, :destroy]
+
+    resource '/comments',
+      headers: 'x-domain-token',
+      methods: [:get, :post, :update, :destroy]
   end
-  
+
 end
