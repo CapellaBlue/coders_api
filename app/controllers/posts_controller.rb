@@ -8,11 +8,10 @@ class PostsController < ApplicationController
     render json: @posts
   end
 
-  # GET /posts/1, and its Comments
+  # GET /posts/1 , and its Comments
   def show
     comments = @post.comments.reverse
     render json: {post: @post, comments: comments}
-    #render json: @post.to_json(include: :comments)
   end
 
   # POST /posts
@@ -35,12 +34,12 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1, and its Comments
+  # DELETE /posts/1, and its comments
   def destroy
-    deleteComments = @post.comments
-    deleteComments.each do |c|
-      Comment.delete(c.id)
-    end
+    # deleteComments = @post.comments
+    # deleteComments.each do |c|
+    #   Comment.delete(c.id)
+    # end
     @post.destroy
   end
 
