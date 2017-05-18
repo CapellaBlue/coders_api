@@ -9,7 +9,7 @@
 10.times do
   Post.create(
   title: Faker::Superhero.power,
-  content: Faker::Lorem.paragraph,
+  content: Faker::Lorem.paragraphs,
   author: Faker::Internet.user_name
   )
 end
