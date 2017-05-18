@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:update, :destroy]
+  before_action :set_comment, only: [:update, :show, :destroy]
 
   # GET /comments
   # def index
@@ -8,10 +8,10 @@ class CommentsController < ApplicationController
   #   render json: @comments
   # end
 
-  # GET /comments/1
-  # def show
-  #   render json: @comment
-  # end
+  #GET /comments/1
+  def show
+    render json: @comment
+  end
 
   # POST /comments
   def create
