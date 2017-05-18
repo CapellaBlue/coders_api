@@ -1,0 +1,2 @@
+class DailyTopic < ApplicationRecord
+end
