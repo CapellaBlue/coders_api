@@ -6,6 +6,15 @@
 # Read more: https://github.com/cyu/rack-cors
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
+
+  allow do
+    origins 'localhost:3001'
+    resource '*',
+      #headers: 'x-domain-token',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+
   allow do
     origins '*'
     resource '*',
@@ -13,16 +22,4 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       methods: [:get, :post, :options, :head]
       # methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
-
-  allow do
-    origins 'localhost:3001'
-    resource '/posts',
-      headers: 'x-domain-token',
-      methods: [:get, :post, :update, :destroy]
-
-    resource '/comments',
-      headers: 'x-domain-token',
-      methods: [:get, :post, :update, :destroy]
-  end
-
 end
