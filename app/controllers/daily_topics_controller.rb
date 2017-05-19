@@ -3,7 +3,7 @@ class DailyTopicsController < ApplicationController
 
   # GET /daily_topics
   def index
-    @daily_topics = DailyTopic.all
+    @daily_topics = DailyTopic.all.reverse
 
     render json: @daily_topics
   end
