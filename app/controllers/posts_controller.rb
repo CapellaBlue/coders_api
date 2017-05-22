@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 , and its Comments
   def show
-    comments = @post.comments.reverse
+    comments = @post.comments
     render json: {post: @post, comments: comments}
   end
 
