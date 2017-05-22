@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 , and its Comments
   def show
-    comments = @post.comments.reverse
+    comments = @post.comments
     render json: {post: @post, comments: comments}
   end
 
@@ -51,6 +51,6 @@ class PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :content, :author, :political_affiliation)
+      params.require(:post).permit(:title, :content, :author, :political_affiliation, :likes, :hardRightLikes, :softRightLikes, :centristLikes, :softLeftLikes, :hardLeftLikes, :independentlikes)
     end
 end
