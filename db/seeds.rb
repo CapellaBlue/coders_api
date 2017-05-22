@@ -14,6 +14,13 @@ aff = ["Hard Right", "Soft Right", "Centrist", "Soft Left", "Hard Left", "Indepe
   content: Faker::Lorem.paragraphs,
   author: Faker::Internet.user_name,
   political_affiliation: aff.sample
+  likes: 0,
+  hardRightLikes: 0,
+  softRightLikes: 0,
+  centristLikes: 0,
+  softLeftLikes: 0,
+  hardLeftLikes: 0,
+  independentlikes: 0
   )
 end
 
